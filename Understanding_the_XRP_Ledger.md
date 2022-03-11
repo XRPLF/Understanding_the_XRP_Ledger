@@ -18,10 +18,21 @@ Joining the software to the Internet allows us to automate this, but there is st
 
 To solve this "consensus" problem we use a byzantine fault tolerant consensus protocol called the Ripple Consensus Protocol.
 
-### 2.1 Validators and Proposals
+### 2.1 Ripple Consensus Protocol
+In the RCP each participant in consensus nominates a _candidate set_ of transactions to be included in the next ledger. Based on the votes of the others, each participant removes or includes certain contested transactions to their proposed set. Each round the threshold for inclusion is increased until 80% of participants agree on a single candidate set. At this point the transaction set is applied, the ledger is closed and voting proceeds for the next ledger. 
 
-### 2.2 Amendments and Rules
-### 2.3 Determinism
+[See white paper](https://ripple.com/files/ripple_consensus_whitepaper.pdf)
+[See video explanation](https://vimeo.com/64405422)
+
+// code inclusions needed
+
+### 2.2 Validators
+Validators are rippled instances which are configured to actively participate in the consensus process. Each opinion about a candidate set is signed with the Validation private key and broadcast to the network as a _TMValidation_ message.
+
+// code inclusions needed
+
+### 2.3 Amendments and Rules
+### 2.4 Determinism
 
 ## 3. Ledgers and Ledger Entries
 ### Merkel Trees
